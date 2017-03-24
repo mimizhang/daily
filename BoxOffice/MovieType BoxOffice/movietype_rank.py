@@ -1,4 +1,6 @@
 # -*- coding: <utf-8> -*-
+import better_exceptions
+import numpy as np
 import pandas as pd
 import matplotlib as mpl
 
@@ -35,7 +37,7 @@ def graph_rank(data, fieldName):
     plt.yticks(range(1, 11), data.index, fontproperties=myfont, fontsize=8)
     plt.subplots_adjust(left=0.1, right=0.95, wspace=0.5, hspace=0.5, bottom=0.1, top=0.95)
     plt.barh(range(1, 11), data[fieldName])
-    plt.savefig(f'/Users/zhangmimi/Git/course/daily/BoxOffice/MovieType BoxOffice/MovieType{fieldName}Top10(2010-2016).png', dpi = 150)
+    plt.savefig(f'/Users/zhangmimi/Git/daily/BoxOffice/MovieType BoxOffice/MovieTypeAudienceCountTop10(2010-2016).svg', dpi = 150)
     # plt.show()
 
 
@@ -54,10 +56,37 @@ def graph_change(data, field, index):
 
     plt.show()
 
+# visdom测试
+# from visdom import Visdom
+# vis = Visdom()
+# def test(data,fieldName):
+#     win = vis.bar(
+#         X=data[fieldName],
+#         opts=dict(
+#         rownames=list(data.index)
+#         )
+#     )
+# def test_type_new(data,field):
+#     result = data.groupby(by=['GenreName','year']).sum()[field].unstack().T
+#     return result
+#
+# def change_test(data, field):
+#     from visdom import Visdom
+#     vis = Visdom()
+#     vis.line(
+#         Y=np.array(test_type_new(data,field)),
+#         X=np.array((test_type_new(data,field).index)),
+#         opts=dict(
+#             legend=list((test_type_new(data,field).columns))
+#         )
+#     )
+
 
 if __name__ == '__main__':
-    df = pd.read_csv('/Users/zhangmimi/Git/course/daily/BoxOffice/MovieType BoxOffice/annualMovieTypeBoxOffice.csv')
+    df = pd.read_csv('/Users/zhangmimi/Git/daily/BoxOffice/MovieType BoxOffice/annualMovieTypeBoxOffice.csv')
     field = 'AudienceCount'
     new = get_sum_New(df, field)
     graph_rank(new, field)
     graph_change(df, field, df.GenreName)
+    # change_test(df, 'BoxOffice')
+    # test(new,field)
