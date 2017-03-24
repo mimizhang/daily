@@ -806,7 +806,120 @@ foo one   -1.471198 -1.714486
 
 ```
 
-### 6.5 Time Series
+### 6.5 Reshaping
+
+1. **Stack**
+
+   ```python
+   tuples = list(zip(*[['bar', 'bar', 'baz', 'baz',
+      ....:                      'foo', 'foo', 'qux', 'qux'],
+      ....:                     ['one', 'two', 'one', 'two',
+      ....:                      'one', 'two', 'one', 'two']]))
+
+   tuples
+   Out[27]: 
+   [('bar', 'one'),
+    ('bar', 'two'),
+    ('baz', 'one'),
+    ('baz', 'two'),
+    ('foo', 'one'),
+    ('foo', 'two'),
+    ('qux', 'one'),
+    ('qux', 'two')]
+
+   index = pd.MultiIndex.from_tuples(tuples, names=['first', 'second'])
+
+   index
+   Out[29]: 
+   MultiIndex(levels=[['bar', 'baz', 'foo', 'qux'], ['one', 'two']],
+              labels=[[0, 0, 1, 1, 2, 2, 3, 3], [0, 1, 0, 1, 0, 1, 0, 1]],
+              names=['first', 'second'])
+
+   df = pd.DataFrame(np.random.randn(8, 2), index=index, columns=['A', 'B'])
+
+   df
+   Out[31]: 
+                        A         B
+   first second                    
+   bar   one     0.398046  0.488732
+         two    -0.024753 -0.567505
+   baz   one    -0.509408  0.055228
+         two     0.936854  0.326829
+   foo   one     0.390471  0.540038
+         two    -1.001224  0.858414
+   qux   one    -1.640981  0.103979
+         two    -0.167781  0.949106
+
+   df[:4]
+   Out[32]: 
+                        A         B
+   first second                    
+   bar   one     0.398046  0.488732
+         two    -0.024753 -0.567505
+   baz   one    -0.509408  0.055228
+         two     0.936854  0.326829
+
+   stacked = df2.stack()
+
+   stacked
+   Out[34]: 
+   first  second   
+   bar    one     A   -1.131337
+                  B    0.734982
+          two     A    0.008166
+                  B   -1.358364
+   baz    one     A   -1.578985
+                  B    0.399612
+          two     A    1.697060
+                  B    0.830027
+   dtype: float64
+       
+   stacked.unstack()
+   Out[35]: 
+                        A         B
+   first second                    
+   bar   one    -1.131337  0.734982
+         two     0.008166 -1.358364
+   baz   one    -1.578985  0.399612
+         two     1.697060  0.830027
+
+   stacked.unstack().unstack()
+   Out[36]: 
+                  A                   B          
+   second       one       two       one       two
+   first                                         
+   bar    -1.131337  0.008166  0.734982 -1.358364
+   baz    -1.578985  1.697060  0.399612  0.830027
+
+   stacked.unstack(1)
+   Out[37]: 
+   second        one       two
+   first                      
+   bar   A -1.131337  0.008166
+         B  0.734982 -1.358364
+   baz   A -1.578985  1.697060
+         B  0.399612  0.830027
+
+   stacked.unstack(0)
+   Out[38]: 
+   first          bar       baz
+   second                      
+   one    A -1.131337 -1.578985
+          B  0.734982  0.399612
+   two    A  0.008166  1.697060
+          B -1.358364  0.830027
+
+   stacked.unstack(2)
+   Out[39]: 
+                        A         B
+   first second                    
+   bar   one    -1.131337  0.734982
+         two     0.008166 -1.358364
+   baz   one    -1.578985  0.399612
+         two     1.697060  0.830027
+   ```
+
+### 6.6 Time Series
 
 1. **resample**：对时间序列做类似于groupby的操作
 
