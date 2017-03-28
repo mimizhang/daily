@@ -127,6 +127,15 @@ True
 
 检测图片方向，**Tesseract** 只能返回0, 90, 180, 270这四个角度。
 
+```python
+In[50]: pyocr.tesseract.detect_orientation(
+            Image.open('/Users/zhangmimi/Desktop/屏幕快照 2017-03-28 下午12.15.21.png'),
+            lang='eng'
+        )
+Out[50]: 
+{'angle': 0, 'confidence': 19.53}
+```
+
 #### 4.1.10 `pyocr.tesseract.image_to_string`
 
 图像内容转字符串
