@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d08e0298-4994-4909-99fd-3f239c5574cf" name="Default" comment="" />
+    <list default="true" id="d08e0298-4994-4909-99fd-3f239c5574cf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2016marathon/get_marathon_data.py" afterPath="$PROJECT_DIR$/2016marathon/get_marathon_data.py" />
+    </list>
     <ignored path="daily.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -13,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/daily$python3.coverage" NAME="python3 Coverage Results" MODIFIED="1491387643926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/daily$python3.coverage" NAME="python3 Coverage Results" MODIFIED="1491392969326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -24,23 +26,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="plotly_test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/plotly_test.py">
+      <file leaf-file-name="get_marathon_data.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/2016marathon/get_marathon_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create_agent_pool.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/自建IP代理池/create_agent_pool.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1503">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            <state relative-caret-position="447">
+              <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding>
-                <element signature="e#34#67#0" expanded="true" />
+                <element signature="e#135#168#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,6 +62,7 @@
         <option value="$PROJECT_DIR$/ocr.py" />
         <option value="$PROJECT_DIR$/ocr_test.py" />
         <option value="$PROJECT_DIR$/get_marathon_data.py" />
+        <option value="$PROJECT_DIR$/2016marathon/get_marathon_data.py" />
       </list>
     </option>
   </component>
@@ -140,6 +133,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="自建IP代理池" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="daily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="daily" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2016marathon" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -378,7 +385,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="daily" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_marathon_data.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/2016marathon/get_marathon_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -556,6 +563,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/get_marathon_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/自建IP代理池/create_agent_pool.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1503">
@@ -566,19 +581,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/get_marathon_data.py">
+    <entry file="file://$PROJECT_DIR$/plotly_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        <state relative-caret-position="135">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/plotly_test.py">
+    <entry file="file://$PROJECT_DIR$/2016marathon/get_marathon_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="447">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="e#135#168#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

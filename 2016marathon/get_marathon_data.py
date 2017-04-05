@@ -32,7 +32,6 @@ for age in age_s:
     try:
         for i in range(1, 5000):
             try:
-                time.sleep(1)
                 url = 'http://www.runchina.org.cn/portal.php?mod=score&ac=athlete&year=' + str(
                     year) + '&sex=&age=' + age + '&project=2&page=' + str(i)
                 response = requests.get(url, headers=headers)
@@ -44,7 +43,7 @@ for age in age_s:
                     if j != 0:
                         for k, v in map_s.items():
                             data[k] = row('td').eq(v).text().replace(' PB', '')
-
+                        data['age'] = age
                         coll.insert(data)
                         print(data)
             except Exception as err:
