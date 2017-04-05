@@ -20,7 +20,7 @@ print("Will use lang '%s'" % (lang))
 
 # TextBuilder用法
 txt = tool.image_to_string(
-    Image.open('/Users/zhangmimi/Desktop/屏幕快照 2017-03-28 下午12.15.21.png'),
+    Image.open('/Users/zhangmimi/Desktop/creditquery!getValidateImg.jpeg'),
     lang=lang,
     builder=pyocr.builders.TextBuilder()
 )
@@ -30,7 +30,7 @@ print(txt)
 
 # WordBoxBuilder用法
 word_boxes = tool.image_to_string(
-    Image.open('/Users/zhangmimi/Desktop/屏幕快照 2017-03-28 下午12.15.21.png'),
+    Image.open('/Users/zhangmimi/Desktop/creditquery!getValidateImg.jpeg'),
     lang=lang,
     builder=pyocr.builders.WordBoxBuilder()
 )
@@ -46,7 +46,7 @@ for elem in word_boxes:
 
 # LineBoxBuilder用法
 line_and_word_boxes = tool.image_to_string(
-    Image.open('/Users/zhangmimi/Desktop/屏幕快照 2017-03-28 下午12.15.21.png'),
+    Image.open('/Users/zhangmimi/Desktop/creditquery!getValidateImg.jpeg'),
     lang=lang,
     builder=pyocr.builders.LineBoxBuilder()
 )
@@ -66,7 +66,7 @@ for line in line_and_word_boxes:
 # 识别数字
 # Digits - Only Tesseract (not 'libtesseract' yet !)
 digits = tool.image_to_string(
-    Image.open('/Users/zhangmimi/Desktop/digit_test.png'),
+    Image.open('/Users/zhangmimi/Desktop/creditquery!getValidateImg.jpeg'),
     lang=lang,
     builder=pyocr.builders.DigitBuilder(),
 )
