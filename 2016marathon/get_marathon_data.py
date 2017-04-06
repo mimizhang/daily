@@ -7,7 +7,7 @@ import requests
 import time
 
 # 目标表
-client = MongoClient('mongodb://duoyun:booksirdb@117.25.156.238:28088/test?authMechanism=SCRAM-SHA-1')
+client = MongoClient('')
 db = client['test']
 coll = db['marathon2016']
 
