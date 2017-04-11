@@ -2,7 +2,7 @@
 from pyquery import PyQuery as pq
 from pprint import pprint
 
-path = '/Users/zhangmimi/Git/course/daily/industry code/鍥芥皯缁忔祹琛屼笟鍒咷BT 4754-2011.html'
+path = '/Users/zhangmimi/Git/daily/industry code/国民经济行业分GBT 4754-2011.html'
 with open(path, 'rb') as f:
     html = f.read()
 d = pq(html)
