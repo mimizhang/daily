@@ -12,11 +12,28 @@ from __future__ import unicode_literals
 from visdom import Visdom
 import numpy as np
 import math
+import os.path
+import getpass
 
 viz = Visdom()
 
 textwindow = viz.text('Hello World!')
 
+# video demo:
+try:
+    video = np.empty([256, 250, 250, 3], dtype=np.uint8)
+    for n in range(256):
+        video[n, :, :, :].fill(n)
+    viz.video(tensor=video)
+
+    # video demo: download video from http://media.w3.org/2010/05/sintel/trailer.ogv
+    videofile = '/home/%s/trailer.ogv' % getpass.getuser()
+    if os.path.isfile(videofile):
+        viz.video(videofile=videofile)
+except ImportError:
+    print('Skipped video example')
+
+# image demo
 viz.image(
     np.random.rand(3, 512, 256),
     opts=dict(title='Random!', caption='How random.'),
@@ -202,6 +219,17 @@ viz.pie(
     X=X,
     opts=dict(legend=['Residential', 'Non-Residential', 'Utility'])
 )
+
+# mesh plot
+x = [0, 0, 1, 1, 0, 0, 1, 1]
+y = [0, 1, 1, 0, 0, 1, 1, 0]
+z = [0, 0, 0, 0, 1, 1, 1, 1]
+X = np.c_[x, y, z]
+i = [7, 0, 0, 0, 4, 4, 6, 6, 4, 0, 3, 2]
+j = [3, 4, 1, 2, 5, 6, 5, 2, 0, 1, 6, 3]
+k = [0, 7, 2, 3, 6, 7, 1, 1, 5, 5, 7, 6]
+Y = np.c_[i, j, k]
+viz.mesh(X=X, Y=Y, opts=dict(opacity=0.5))
 
 # SVG plotting
 svgstr = """
