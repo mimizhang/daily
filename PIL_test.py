@@ -13,4 +13,7 @@ image_bytes = urlopen(url).read()
 image_bytes = get(url).content
 data_stream = BytesIO(image_bytes)
 pil_image = Image.open(data_stream)
+# 二值化
+pil_image = pil_image.convert('L')
 print(pil_image.size)
+pil_image.show()
