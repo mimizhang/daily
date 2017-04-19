@@ -23,7 +23,8 @@ import jieba
 seg_list = jieba.cut("杭州长春药店", cut_all=False)
 print("Full Mode: " + "/ ".join(seg_list))  # 全模式
 
-seg_list = jieba.cut("那老子彭泽县懒坐衙，倦将文卷押，数十日不上马，柴门掩上咱，篱下看黄花。爱的是绿水青山，见一个白衣人来报，来报五柳庄幽静煞。【浦印亢厥令】春夏间，遍郊原桃杏繁，用尽丹青图画难。道童将驴鞴上鞍，忍不住只恁般顽，将一个酒葫芦杨柳上拴。", cut_all=False)
+seg_list = jieba.cut(
+    "那老子彭泽县懒坐衙，倦将文卷押，数十日不上马，柴门掩上咱，篱下看黄花。爱的是绿水青山，见一个白衣人来报，来报五柳庄幽静煞。【浦印亢厥令】春夏间，遍郊原桃杏繁，用尽丹青图画难。道童将驴鞴上鞍，忍不住只恁般顽，将一个酒葫芦杨柳上拴。", cut_all=False)
 print("Default Mode: " + "/ ".join(seg_list))  # 精确模式
 
 # seg_list = jieba.cut("他来到了网易杭研大厦")  # 默认是精确模式

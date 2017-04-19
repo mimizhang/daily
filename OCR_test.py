@@ -50,7 +50,8 @@ line_and_word_boxes = tool.image_to_string(
     lang=lang,
     builder=pyocr.builders.LineBoxBuilder()
 )
-# line_and_word_boxes也是list,list中的每个line objects有line.word_boxes(结构和box objects相同),line.content(每一行的内容)和位置line.position
+# line_and_word_boxes也是list,list中的每个line objects有line.word_boxes(结构和box
+# objects相同),line.content(每一行的内容)和位置line.position
 print(len(line_and_word_boxes))
 for line in line_and_word_boxes:
     for word in line.word_boxes:
