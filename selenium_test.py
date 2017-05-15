@@ -2,6 +2,7 @@
 # 需要下载驱动chromedriver，然后将驱动文件路径配置在环境变量/usr/local/bin中即可。
 # 不错的总结
 # http://www.zhangzewen.net/posts/2016/Sep/25/seleniumphantomjsshi-yong-zong-jie/#seleniumphantomjsshi-yong-zong-jie
+# http://www.jianshu.com/p/9d408e21dc3a
 # browser.execute_script(newwindow) 可以执行js
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -22,8 +23,8 @@ dcap[
 # 设置Referer
 dcap['phantomjs.page.customHeaders.Referer'] = 'http://www.gatherproxy.com/zh/proxylist/anonymity/?t=Elite'
 
-driver = webdriver.PhantomJS(desired_capabilities=dcap)
-
+# driver = webdriver.PhantomJS(desired_capabilities=dcap)
+driver = webdriver.Chrome()
 driver.get('http://www.gatherproxy.com/zh/proxylist/anonymity/?t=Elite')
 driver.find_element_by_css_selector('.button').click()
 # 页面还是在loading其他东西，一般保险的做法就是等上一段时间
