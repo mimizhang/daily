@@ -16,6 +16,11 @@ image_bytes = urlopen(url).read()
 image_bytes = get(url).content
 data_stream = BytesIO(image_bytes)
 pil_image = Image.open(data_stream)
+
+# 更改尺寸
+# pil_image = pil_image.resize((100, 30), Image.ANTIALIAS)
+
+
 # 二值化
 pil_image = pil_image.convert('L')
 data = pil_image.getdata()
